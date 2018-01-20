@@ -15,6 +15,9 @@ message Person {
     string lastName = 3;
     string description = 4;
 }
+message FileContent {
+    string content = 1;
+}
 
 message PersonById {
     int32 id = 1;
@@ -27,5 +30,9 @@ service PersonManagement {
     }
 
     rpc randomNames (google.protobuf.Empty) returns (Person) {
+    }
+
+    rpc whatsTheNameInTheFile (google.protobuf.Empty) returns (FileContent) {
+
     }
 }
